@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Physics Simulation</title>
+    <script type="text/javascript" src="Simulation3.js"></script>
+    <script type="text/javascript" src="Simulator.js"></script>
+    <style type="text/css">
+      * {
+      padding: 0;
+      margin: 0;
+      }
+      html, body {
+      width: 100%;
+      height: 100%;
+      }
+      canvas {
+      display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas1"></canvas>
+    <script type="text/javascript">
+      window.setTimeout(function() {
+      var sim = new Simulator("canvas1");
+
+      window.addEventListener("resize", function(event) {
+      sim.setSize(window.innerWidth, window.innerHeight);
+      });
+      sim.setSize(window.innerWidth, window.innerHeight);
+
+      sim.start();
+      }, 1);
+    </script>
+  </body>
+</html>
